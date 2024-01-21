@@ -1,0 +1,15 @@
+<script>
+//    function setData(){
+//     const kk=fetch("https://fakerapi.it/api/v1/persons");
+//     kk.then(async (data)=>{
+//         console.log(await data.json());
+//     });
+//     }
+     async  function setData(){
+    const kk=await fetch("https://fakerapi.it/api/v1/persons");
+    const ll = await kk.json();
+    console.log(ll);
+    }
+
+</script>
+<button onclick="setData()">click</button>
