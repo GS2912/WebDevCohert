@@ -1,0 +1,180 @@
+<html>
+    <style>
+       
+        
+    </style>
+    <script>
+            async function populateDiv(){
+            let a= parseInt(document.getElementById("f1").value);
+            let b= parseInt(document.getElementById("f2").value);
+            var k= document.getElementById("kk");
+            let res= await fetch("https://sum-server.100xdevs.com/interest?principal=100&rate=5&time=2");
+            let ans= await res.json();
+            console.log(ans);
+            k.innerHTML=ans.total;
+            // let j=document.getElementsByTagName("div"); 
+            }
+
+            let timeout;
+        async function debounce(){
+            clearTimeout(timeout);
+            setInterval(() => {
+                populateDiv();
+            }, 5000);
+        }
+    </script>
+    <body>
+        <input oninput="debounce()" id="f1" type="text" placeholder="no. 1"><br>
+        <input oninput="populateDiv()" id="f2" type="text" placeholder="no.2"><br>
+        <!-- <button onclick="populateDiv()">calculate sum</button><br></br> -->
+        <div class="koko" id="kk">
+           
+        </div>
+       
+    </body>
+</html> 
+
+
+
+<!--  debouncing, throtling-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garv Soni's Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #f9f4f8;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .education, .experience {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .skills {
+            margin-bottom: 200px;
+        }
+
+        .skills ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills li {
+            background-color: aqua;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GARV SONI</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <section>
+        <h2>Contact Information</h2>
+        <p>Email: garvsoni2912@gmail.com</p>
+        <p>Phone: 7009738847</p>
+        <p>GitHub: github.com/GS2912</p>
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Degree in Computer Science</strong> - UIET Chandigarh, 2026</li>
+            <li><strong>+2</strong>...................... 94%</li>
+            <li><strong>10</strong>.......................96%</li>
+        </ul>
+    </section>
+
+    <section class="experience">
+        <h2>Work Experience</h2>
+        <ul>
+            <li><strong>Student Intern</strong> - IIT Mandi Fuded Project on Human emotion detection, Jan 2024 - till date...</li>
+        </ul>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Js</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>Git</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning</li>
+            <li>LLMs</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Garv Soni. All rights reserved.</p> -->
+    <!-- </footer> -->
+
+<!-- </body>
+</html> -->

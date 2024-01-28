@@ -1,0 +1,36 @@
+<html>
+    <style>
+        .disp{
+            background-color: aqua;
+            
+        }
+    </style>
+    <script>
+        let i=0;
+        function add(){
+            let tit= document.getElementById("tit").value;
+            let desc= document.getElementById("desc").value;
+            let k= document.getElementById("disp");
+            let e=document.createElement("div");
+            e.innerHTML= `<div id="${i}">
+                <div>${tit}</div>
+                <div>${desc}</div>
+                <button onclick="del(${i})">Mark as done</button>
+                </div>`;
+            k.appendChild(e);
+            
+        }
+        function del(gg){
+            let dd= document.getElementById(`k${gg}`);
+            dd.remove();
+        }
+    </script>
+    <body>
+        <input id="tit" type="text" placeholder="title">
+        <br>
+        <input id="desc" type="text" placeholder="description">
+        <br>
+        <button onclick="add()">add</button>
+        <div id="disp"> TO DO LIST</div>
+    </body>
+</html>
